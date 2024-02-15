@@ -5,6 +5,9 @@
 enum {
   VENDOR_ID = 0xFEED,
   PRODUCT_ID = 0x1337,
+  // Set usage values to 0 if unknown.
+  USAGE_PAGE = 0xFF60,
+  USAGE = 0x61,
   MAX_LENGTH = 255
 };
 
@@ -15,18 +18,29 @@ int main(int argc, char *argv[]) {
   struct hid_device_info *devices, *current_device;
   devices = hid_enumerate(VENDOR_ID, PRODUCT_ID);
   current_device = devices;
+  int usage_known = (USAGE_PAGE != 0) && (USAGE != 0);
 
   while (current_device) {
     unsigned short int usage_page = current_device->usage_page;
     unsigned short int usage = current_device->usage;
+
+    if (usage_known && (usage_page != USAGE_PAGE || usage != USAGE)) {
+      printf("Skipping -- Usage (page): 0x%hX (0x%hX)...\n", usage, usage_page);
+      current_device = current_device->next;
+      continue;
+    }
 
     printf("Opening -- Usage (page): 0x%hX (0x%hX)...\n", usage, usage_page);
     handle = hid_open_path(current_device->path);
 
     if (!handle) {
       printf("Unable to open device\n");
-      current_device = current_device->next;
-      continue;
+      if (usage_known) {
+        break;
+      } else {
+        current_device = current_device->next;
+        continue;
+      }
     }
 
     printf("Success!\n");
