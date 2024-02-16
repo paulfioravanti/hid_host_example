@@ -2,7 +2,7 @@
 
 This is the codebase for my implementation of a [Human Interface Device][] (HID)
 host program in [C][]. It was created using [Plover][] stenography and
-[UltiSnips][] snippets, for the [Talking to a Georgi with C [Steno Coding]][]
+[UltiSnips][] snippets, for the [Talking to a Georgi with C \[Steno Coding\]][]
 video.
 
 ## Setup
@@ -66,5 +66,5 @@ repo.
 [pkg-config]: https://en.wikipedia.org/wiki/Pkg-config
 [pkg-config repo]: https://gitlab.freedesktop.org/pkg-config/pkg-config
 [Plover]: http://www.openstenoproject.org/
-[Talking to a Georgi with C [Steno Coding]]: https://www.youtube.com/watch?v=egReh-6maNw
+[Talking to a Georgi with C \[Steno Coding\]]: https://www.youtube.com/watch?v=egReh-6maNw
 [UltiSnips]: https://github.com/SirVer/ultisnips
