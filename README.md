@@ -2,8 +2,10 @@
 
 This is the codebase for my implementation of a [Human Interface Device][] (HID)
 host program in [C][]. It was created using [Plover][] stenography and
-[UltiSnips][] snippets, for the [Talking to a Georgi with C \[Steno Coding\]][]
-video.
+[UltiSnips][] snippets, for the following media:
+
+- [Get on the Same Page as your HID Device][] blog post
+- [Talking to a Georgi with C \[Steno Coding\]][] video
 
 ## Setup
 
@@ -58,6 +60,7 @@ For a more robust example of a HID host that I use often, see my [HID Hosts][]
 repo.
 
 [C]: https://en.wikipedia.org/wiki/C_(programming_language)
+[Get on the Same Page as your HID Device]: https://www.paulfioravanti.com/blog/same-page-hid-device/
 [HIDAPI]: https://github.com/libusb/hidapi
 [HID Hosts]: https://github.com/paulfioravanti/hid_hosts
 [Homebrew]: https://brew.sh/
